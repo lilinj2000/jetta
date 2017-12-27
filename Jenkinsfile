@@ -4,7 +4,10 @@ pipeline {
     stage('build') {
       steps {
         sh '''./configure
-make'''
+make
+
+
+env'''
       }
     }
   }
