@@ -5,6 +5,10 @@ pipeline {
       steps {
         sh '''./configure
 make'''
+      }
+    }
+    stage('sonar analysis') {
+      steps {
         waitForQualityGate()
       }
     }
