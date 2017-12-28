@@ -5,7 +5,6 @@ pipeline {
       steps {
         sh '''./configure
 make'''
-        waitForQualityGate()
       }
     }
   }
