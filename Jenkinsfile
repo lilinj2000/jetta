@@ -1,6 +1,9 @@
 pipeline {
   agent {
-    docker { image 'lilinj2000/dev:centos6' }
+    docker {
+      image 'lilinj2000/dev:centos6'
+    }
+    
   }
   stages {
     stage('build') {
@@ -11,6 +14,7 @@ pipeline {
 	./configure
 	make
 	'''
+        cleanWs(cleanWhenSuccess: true)
       }
     }
   }
