@@ -1,10 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    docker { image 'lilinj2000/dev:centos6' }
+  }
   stages {
     stage('build') {
       steps {
-        sh '''./configure
-make'''
+        sh '''
+	env
+	uname -a
+	sleep 10000
+	'''
       }
     }
   }
