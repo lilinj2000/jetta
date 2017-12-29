@@ -6,7 +6,9 @@ pipeline {
   }
 
   environment {
-    home_3rd = '${env.HUDSON_HOME}/dist_pkg/3rd/centos6'
+    home_3rd = '/var/jenkins_home/dist_pkg/3rd/centos6'
+    home_libs = '/var/jenkins_home/dist_pkg/libs/centos6'
+    home_app = '/var/jenkins_home/dist_pkg/app/centos6'
   }
   stages {
     stage('build') {
