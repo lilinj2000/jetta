@@ -8,7 +8,8 @@ pipeline {
         sh '''
 	env
 	uname -a
-	sleep 10000
+	./configure
+	make
 	'''
       }
     }
