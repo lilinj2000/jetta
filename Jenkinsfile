@@ -22,8 +22,10 @@ pipeline {
       }
     }
     stage('SonarQube analysis') {
-      withSonarQubeEnv() {
-        tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+      steps {
+        withSonarQubeEnv() {
+          tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        }
       }
     }
   }
