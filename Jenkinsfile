@@ -24,9 +24,7 @@ pipeline {
     }
 
     stage('SonarQube analysis') {
-      agent { 
-        label 'master'
-      }
+      agent none
 
       steps {
         script {
