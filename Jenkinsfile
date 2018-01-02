@@ -17,10 +17,19 @@ pipeline {
 	./configure
 	make
 	'''
-        withSonarQubeEnv('1') {
-          tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+      }
+    }
+  }
+  stage('SonarQube analysis') {
+    steps {
+      script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'SonarQube Scanner 2.8'
+      }
+      withSonarQubeEnv('scanner') {
+          // tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 	  sh 'env'
-        }
+	  sh "${scannerHome}/bin/sonar-scanner"
       }
     }
   }
