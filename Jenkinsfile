@@ -21,5 +21,10 @@ pipeline {
         cleanWs(cleanWhenSuccess: true)
       }
     }
+    stage('SonarQube analysis') {
+      withSonarQubeEnv() {
+        tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+      }
+    }
   }
 }
