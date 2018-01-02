@@ -14,7 +14,6 @@ pipeline {
     stage('build') {
       steps {
         sh '''
-	env
 	./configure
 	make
 	'''
@@ -23,6 +22,7 @@ pipeline {
     stage('SonarQube analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
+	  sh 'env'
           tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         }
       }
