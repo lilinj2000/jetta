@@ -18,7 +18,6 @@ pipeline {
 	./configure
 	make
 	'''
-        cleanWs(cleanWhenSuccess: true)
       }
     }
     stage('SonarQube analysis') {
