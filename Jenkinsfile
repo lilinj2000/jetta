@@ -17,7 +17,7 @@ pipeline {
 	./configure
 	make
 	'''
-        withSonarQubeEnv('SonarQube') {
+        withSonarQubeEnv('1') {
           tool name: 'scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
 	  sh 'env'
         }
