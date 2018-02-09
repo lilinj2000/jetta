@@ -17,6 +17,7 @@ pipeline {
 
       steps {
         sh '''
+	cpplint --output=vs7 --recursive .
 	./configure
 	make
 	'''
