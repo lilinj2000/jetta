@@ -17,9 +17,10 @@ pipeline {
 
       steps {
         sh '''
+	env
 	cpplint --output=vs7 --recursive .
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 . 2> cppcheck.xml
-	cppcheck-htmlreport --title="jetta" --file=cppcheck.xml  --report-dir=./cppcheck-report
+	cppcheck-htmlreport --title="$JOB_NAME" --file=cppcheck.xml  --report-dir=./cppcheck-report
 	./configure
 	make
 	'''
