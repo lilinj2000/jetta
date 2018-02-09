@@ -19,7 +19,7 @@ pipeline {
         sh '''
 	cpplint --output=vs7 --recursive .
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 . 2> cppcheck.xml
-	cppcheck-htmlreport --title="cppcheck report" --file=cppcheck.xml  --report-dir=./cppcheck-report
+	cppcheck-htmlreport --title="" --file=cppcheck.xml  --report-dir=./cppcheck-report
 	./configure
 	make
 	'''
