@@ -23,7 +23,8 @@ pipeline {
 	./configure
 	make
 	'''
-	archiveArtifacts 'cppcheck.xml cppcheck-report/*'
+	archiveArtifacts 'cppcheck.xml'
+	archiveArtifacts 'cppcheck-report/*'
 
 	publishHTML([allowMissing: false,
 	 alwaysLinkToLastBuild: false,
