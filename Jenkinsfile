@@ -19,10 +19,12 @@ pipeline {
         sh '''
 	cpplint --output=vs7 --recursive .
 	cppcheck --enable=all --inconclusive --xml --xml-version=2 . 2> cppcheck.xml
-	cppcheck-htmlreport --title="" --file=cppcheck.xml  --report-dir=./cppcheck-report
+	cppcheck-htmlreport --title="jetta" --file=cppcheck.xml  --report-dir=./cppcheck-report
 	./configure
 	make
 	'''
+	archiveArtifacts 'cppcheck-report/*'
+
 	publishHTML([allowMissing: false,
 	 alwaysLinkToLastBuild: false,
 	 keepAll: false,
