@@ -24,6 +24,7 @@ pipeline {
       }
     }
 
+/*
     stage('SonarQube analysis') {
       agent {
       	label 'master'
@@ -39,5 +40,6 @@ pipeline {
         }
       }
     }
+*/
   }
 }
