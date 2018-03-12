@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'lilinj2000/dev:centos6'
+      image 'lilinj2000/dev:centos6.gcc'
     }
   }
 
@@ -13,7 +13,7 @@ pipeline {
 
 
   stages {
-    stage('code static check') {
+    /* stage('code static check') {
       steps {
         sh '''
 cpplint --output=vs7 --recursive .
@@ -32,7 +32,7 @@ cppcheck-htmlreport --title="$JOB_NAME" --file=cppcheck.xml  --report-dir=./cppc
 	 reportTitles: ''])
 
       }
-    }
+    } */
 
     stage('build') {
 
