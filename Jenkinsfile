@@ -13,7 +13,7 @@ pipeline {
 
 
   stages {
-    /* stage('code static check') {
+    stage('code static check') {
       steps {
         sh '''
 cpplint --output=vs7 --recursive .
@@ -32,7 +32,7 @@ cppcheck-htmlreport --title="$JOB_NAME" --file=cppcheck.xml  --report-dir=./cppc
 	 reportTitles: ''])
 
       }
-    } */
+    }
 
     stage('build') {
 
@@ -63,10 +63,10 @@ cppcheck-htmlreport --title="$JOB_NAME" --file=cppcheck.xml  --report-dir=./cppc
 */
   }
 
- /*  post { 
+  post { 
     always { 
       cleanWs()
      }
-  } */
+  }
 
 }
