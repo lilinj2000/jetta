@@ -63,10 +63,10 @@ cppcheck-htmlreport --title="$JOB_NAME" --file=cppcheck.xml  --report-dir=./cppc
 */
   }
 
-  post { 
+ /*  post { 
     always { 
       cleanWs()
      }
-  }
+  } */
 
 }
